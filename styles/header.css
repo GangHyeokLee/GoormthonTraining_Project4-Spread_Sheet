@@ -1,0 +1,18 @@
+#Export_button{
+  font-size: 120%;
+  margin-bottom: 1%;
+  background-color: var(--export-button-color);
+  color: var(--text-color-selected);
+  border: none;
+  padding: 1%;
+  border-radius: 5px;
+}
+
+#Export_button:hover{
+  cursor: pointer;
+  background-color: green;
+}
+
+#Export_button:active{
+  opacity: 0.7;
+}

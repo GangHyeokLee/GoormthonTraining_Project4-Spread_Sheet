@@ -18,6 +18,7 @@ const spreadsheet = new (function (){
       let th = document.createElement('th');
       th.innerHTML = i;
       th.setAttribute('id',i+'col');
+      th.setAttribute('class', 'column_head');
       tr.appendChild(th);
     }
 
@@ -26,11 +27,28 @@ const spreadsheet = new (function (){
       //table에 한 행 추가
       tr = table.insertRow(-1);
       for(let j =0;j<this.row_name.length;j++){
-        let td = tr.insertCell(-1);
+        let td;
         if(j==0){
+          td=tr.insertCell(-1);
           td.innerHTML = i;
+          td.setAttribute('class', 'row_head');
+          td.setAttribute('id', this.row_name[j]+i);
+        }else{
+          td = document.createElement('td');
+          tr.appendChild(td);
+          let input = document.createElement('input');
+          input.setAttribute('type', 'text');
+          input.addEventListener('focus', function(e){
+            cellFocused(input.id);
+          });
+          input.addEventListener('blur', function(){
+            cellBlurred(input.id);
+          });
+          td.appendChild(input);
+          input.setAttribute('id', this.row_name[j]+'_'+i);
+          input.setAttribute('class', 'cells');
         }
-        td.setAttribute('id', this.row_name[j]+i);
+        
       }
       tr.setAttribute('id', i+'row');
     }
@@ -38,3 +56,27 @@ const spreadsheet = new (function (){
 });
 
 spreadsheet.createTable();
+
+function cellFocused(cellId){
+  const id = cellId.split('_');
+
+  //행과 열번호 찾기
+  const row = document.getElementById(id[1]);
+  const column = document.getElementById(id[0]+'col');
+
+  //색깔 바꾸기
+  row.setAttribute('style', 'background-color:var(--head-cell-color-selected); color:var(--text-color-selected)');
+  column.setAttribute('style', 'background-color:var(--head-cell-color-selected); color:var(--text-color-selected)');
+
+
+}
+
+function cellBlurred(cellId){
+  const id = cellId.split('_');
+    
+  const row = document.getElementById(id[1]);
+  const column = document.getElementById(id[0]+'col');
+
+  row.setAttribute('style', 'background-color:var(--head-cell-color); color:var(--text-color)');
+  column.setAttribute('style', 'background-color:var(--head-cell-color); color:var(--text-color)');
+}

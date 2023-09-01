@@ -4,4 +4,31 @@ table, th, td
     border-collapse: collapse;
     padding: 2px 3px;
     text-align: center;
+    color: var(--text-color);
+}
+
+table{
+  table-layout: fixed;
+}
+
+.row_head, .column_head{
+  background-color: var(--head-cell-color);
+}
+
+.main_container{
+  width: 100%;
+  /* padding: 1%; */
+}
+
+#spread_sheet{
+  width: 100%;
+}
+
+.row_head{
+  font-weight:bold;
+}
+
+.cells{
+  border: none;
+  width: 100%;
 }

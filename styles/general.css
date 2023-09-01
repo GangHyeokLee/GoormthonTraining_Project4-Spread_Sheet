@@ -6,35 +6,19 @@
 }
 
 body{
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  padding: 1%;
 }
 
 :root{
   --text-color : rgb(70, 70, 70);
-  --text-color-gray: rgb(150, 150, 150);
-  --text-color-in-button: rgb(250, 250, 250);
+  --text-color-selected: rgb(250, 250, 250);
 
-  --button-color-1: rgb(80, 80, 255);
-  --button-color-2: rgb(150, 150, 150);
-  --button-color-3: rgb(70, 200, 100);
-  --button-color-4: rgb(0, 170, 170);
+  --head-cell-color: rgb(200, 200, 200);
+  --head-cell-color-selected: rgb(130, 230, 230);
+  
+  --export-button-color: rgb(70, 200, 100);
 
-  --border-color: lightgray;
-}
-
-.bc1{
-  background-color: var(--button-color-1);
-}
-.bc2{
-  background-color: var(--button-color-2);
-}
-.bc3{
-  background-color: var(--button-color-3);
-}
-
-.bc4{
-  background-color: var(--button-color-4);
 }
