@@ -1,4 +1,9 @@
-#Export_button{
+header{
+  height: 30%;
+  margin: 1% 0 2% 0;
+}
+
+#export_button{
   font-size: 120%;
   margin-bottom: 1%;
   background-color: var(--export-button-color);
@@ -6,13 +11,14 @@
   border: none;
   padding: 1%;
   border-radius: 5px;
+  text-decoration: none;
 }
 
-#Export_button:hover{
+#export_button:hover{
   cursor: pointer;
   background-color: green;
 }
 
-#Export_button:active{
+#export_button:active{
   opacity: 0.7;
 }
