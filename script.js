@@ -69,6 +69,9 @@ function cellFocused(cellId){
   column.setAttribute('style', 'background-color:var(--head-cell-color-selected); color:var(--text-color-selected)');
 
 
+  //표 위의 Cell에 보이기
+  const cell = document.getElementById('cell_name');
+  cell.innerHTML='Cell: '+ id[1]+id[0];
 }
 
 function cellBlurred(cellId){
